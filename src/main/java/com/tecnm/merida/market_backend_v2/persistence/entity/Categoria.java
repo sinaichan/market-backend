@@ -11,18 +11,18 @@ public class Categoria {
     @Column(name = "id_categoria")
     private Integer idCategoria;
 
-    private String descripton;
+    private String descripcion;
     private Boolean estado;
 
     @OneToMany(mappedBy = "categoria")
     private List<Producto> productos;
 
     public String getDescripton() {
-        return descripton;
+        return descripcion;
     }
 
     public void setDescripton(String descripton) {
-        this.descripton = descripton;
+        this.descripcion = descripton;
     }
 
     public Integer getIdCategoria() {
@@ -47,5 +47,13 @@ public class Categoria {
 
     public void setProductos(List<Producto> productos) {
         this.productos = productos;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }
