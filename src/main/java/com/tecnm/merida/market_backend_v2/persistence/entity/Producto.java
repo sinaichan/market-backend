@@ -15,16 +15,16 @@ public class Producto {
 
     private String nombre;
 
-    @Column (name = "id_categoria")
+    @Column(name = "id_categoria")
     private Integer idCategoria;
 
-    @Column (name = "codigo_barras")
+    @Column(name = "codigo_barras")
     private String codigoBarras;
 
-    @Column (name = "precio_venta")
+    @Column(name = "precio_venta")
     private Double precioVenta;
 
-    @Column (name = "cantidad_stock")
+    @Column(name = "cantidad_stock")
     private Integer cantidadStock;
 
     private Boolean estado;
@@ -57,8 +57,8 @@ public class Producto {
         return idCategoria;
     }
 
-    public void setId_categoria(Integer id_categoria) {
-        this.idCategoria = id_categoria;
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
     public String getCodigoBarras() {

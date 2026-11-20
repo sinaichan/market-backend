@@ -33,6 +33,20 @@ public class Compra {
     @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL)
     private List<CompraProducto> productos;
 
+    @PrePersist
+    @PreUpdate
+    private void syncProductosIds() {
+        if (this.productos != null && this.idCompra != null) {
+            for (CompraProducto detalle : this.productos) {
+                if (detalle.getId() == null) {
+                    detalle.setId(new CompraProductoPK());
+                }
+                detalle.getId().setIdCompra(this.idCompra);
+            }
+        }
+    }
+
+
     public Integer getIdCompra() {
         return idCompra;
     }
